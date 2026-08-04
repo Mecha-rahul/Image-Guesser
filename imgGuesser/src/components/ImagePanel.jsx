@@ -1,13 +1,20 @@
-function ImagePanel({ src }) {
+
+function ImagePanel({ imageURL, loading }) {
+  if (loading || !imageURL) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-slate-400">
+        Loading...
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full h-full rounded-xl overflow-hidden">
-      <img
-        src={src}
-        alt="Guess the location"
-        className="w-full h-full object-cover"
-      />
-    </div>
+    <img
+      src={imageURL}
+      alt="Guess the location"
+      className="w-full h-full object-cover rounded-xl"
+    />
   );
 }
 
-export default ImagePanel
+export default ImagePanel;

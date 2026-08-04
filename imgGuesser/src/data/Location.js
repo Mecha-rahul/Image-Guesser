@@ -34,7 +34,7 @@ export function getLocations() {
   ];
 }
 
-export function getRandomLoaction(){
+export function getRandomLocation(){
   const location = getLocations();
-  return locationn[Math.floor(Math.random() * location.length)];
+  return location[Math.floor(Math.random() * location.length)];
 }

@@ -6,11 +6,17 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [roundTrigger, setRoundTrigger] = useState(0)
+
+  const handleNewGame = () => {
+    setRoundTrigger((prev) => prev + 1)
+  }
 
   return (
-    <>
-    <LocationShowcase />
-    </>
+    <div className="flex flex-col h-screen">
+      <Header onNewGame={handleNewGame} />
+      <GameLayout roundTrigger={roundTrigger} />
+    </div>
   )
 }
 
